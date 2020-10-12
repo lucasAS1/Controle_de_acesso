@@ -1,0 +1,10 @@
+html,body{
+    height:100%;
+    width:100%;
+    background-color:dimgray;
+}
+.login{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
