@@ -8,3 +8,6 @@ html,body{
     justify-content:center;
     align-items:center;
 }
+div .nav li a{
+    color: white !important;
+}
