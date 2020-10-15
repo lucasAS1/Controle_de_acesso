@@ -11,3 +11,36 @@ html,body{
 div .nav li a{
     color: white !important;
 }
+
+div .nav li a:hover{
+    color: darkgray !important;
+}
+
+
+.conteudo{
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+
+.menu-lateral{
+    background-color:#565656;
+}
+
+.nvg{
+    background-color: #005162;
+}
+
+.principal{
+    background-color: #d3d3d1;
+}
+
+.principal .form-control:focus{
+    border-color: #41ddb4;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 179, 0.25);
+}
+
+
+.principal .thead-dark th{
+    background-color: #005162 !important;
+}
