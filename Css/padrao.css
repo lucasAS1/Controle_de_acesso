@@ -8,6 +8,8 @@ html,body{
     justify-content:center;
     align-items:center;
 }
+
+
 div .nav li a{
     color: white !important;
 }
@@ -30,6 +32,14 @@ div .nav li a:hover{
     background-color: #005162;
 }
 
+.nvg .nav-link{
+    color:white !important;
+}
+
+.nvg .nav-link:hover{
+    color: darkgray !important;
+}
+
 .principal{
     background-color: #d3d3d1;
 }
@@ -44,3 +54,16 @@ div .nav li a:hover{
 .principal .thead-dark th{
     background-color: #005162 !important;
 }
+
+.principal .page-link{
+    background-color: #005162 !important;
+    color:white;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #005162;
+    border-color: #8ec7b8 !important;
+}
+

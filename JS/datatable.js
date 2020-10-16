@@ -38,6 +38,9 @@ $(document).ready(()=>{
                 }
             }
         },
-        "responsive":true,
+        "responsive":false,
+        "searching":false,
+        "lengthChange":false,
+        "autoWidth":false
     });
 });
