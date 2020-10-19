@@ -45,6 +45,7 @@
             <div class="col-10 principal" >
                 <div class="container-fluid" >
                     <div class="row d-flex align-content-center justify-content-center my-5">
+                    <form class="form-inline" method="POST"> 
                         <div class="card w-100">
                             <div class="card-header">
                                 <p class="lead">Cadastro Temporario</p>
@@ -81,7 +82,7 @@
                                         id="txtEmail" 
                                         placeholder="Digite o RG">
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-2">
                                         <label for="slcUF">UF:</label>
                                         <select class="form-control" id="slcUF">
                                             <option selected value="N/A">Escolha</option>
@@ -91,48 +92,56 @@
                                             <option value="PA">PA</option>
                                         </select>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-2">
                                         <label for="txtEmissor">Emissor:</label>
                                         <input 
                                         class="form-control" 
                                         type="text" 
                                         id="txtEmissor" 
                                         placeholder="Digite o Emissor">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="txtVeiculo">Possui veiculo?</label>                                       
+                                        <div class="form-check">
+                                            <input 
+                                            class="form-check-input" 
+                                            type="radio" 
+                                            name="rdoVeiculo"
+                                            id="rdoVSim" 
+                                            value="Sim">
+                                            <label 
+                                            class="form-check-label" 
+                                            for="rdoVSim">Sim</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input 
+                                            class="form-check-input" 
+                                            type="radio" 
+                                            id="rdoVNao" 
+                                            name="rdoVeiculo" 
+                                            value="Nao">
+                                            <label 
+                                            class="form-check-label" 
+                                            for="rdoVNao">Não</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row d-flex justify-content-center pt-5">
                                     <div class="col-4">
-                                        <label for="txtVeiculo">Possui veiculo?:</label>                                       
-                                        <input 
-                                        class="form-check" 
-                                        type="radio" 
-                                        name="rdoVeiculo"
-                                        id="rdoVSim" 
-                                        value="Sim"><label class="form-check-label" for="rdoVSim">Sim</label>
-                                        <input 
-                                        class="form-check" 
-                                        type="radio" 
-                                        id="rdoVNao" 
-                                        name="rdoVeiculo" 
-                                        value="Nao">
-                                    </div>
-                                    <div class="col-4">
-                                        <label for="slcUF">UF:</label>
-                                        <select class="form-control" id="slcUF">
-                                            <option selected value="N/A">Escolha</option>
-                                            <option value="SP">SP</option>
-                                            <option value="RJ">RJ</option>
-                                            <option value="CE">CE</option>
-                                            <option value="PA">PA</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label for="txtEmissor">Emissor:</label>
+                                        <label for="txtPlaca">Placa:</label>
                                         <input 
                                         class="form-control" 
                                         type="text" 
-                                        id="txtEmissor" 
-                                        placeholder="Digite o Emissor">
+                                        id="txtPlaca" 
+                                        placeholder="Digite a placa" disabled>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="txtMorador">Morador:</label>
+                                        <input 
+                                        class="form-control" 
+                                        type="text" 
+                                        id="txtMorador" 
+                                        placeholder="Digite a morador">
                                     </div>
                                 </div>
                                 <div class="row pt-4 d-flex justify-content-center">
@@ -146,6 +155,7 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
