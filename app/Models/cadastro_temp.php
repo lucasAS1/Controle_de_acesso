@@ -9,4 +9,5 @@ class cadastro_temp extends Model
 {
     use HasFactory;
     protected $table='cadastro_temp';
+    public $timestamps=false;
 }

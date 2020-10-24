@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Cad_Temp;
+use App\Models\cadastro_temp;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('portaria');
+    $Cad=new cadastro_temp();
+    return view('portaria',['tabela'=>$Cad->all()]);
 });
 
 Route::get('/Cadastro', function () {
     return view('temp_cad');
 });
+
+Route::post('/cad_temp',[Cad_Temp::class,'insereCadastro']);

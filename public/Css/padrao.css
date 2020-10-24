@@ -1,7 +1,7 @@
 html,body{
     height:100%;
     width:100%;
-    background-color:dimgray;
+    background-color:#d3d3d1;
 }
 .login{
     display:flex;
@@ -67,3 +67,11 @@ div .nav li a:hover{
     border-color: #8ec7b8 !important;
 }
 
+footer{   
+    background-color: #005162;
+}
+
+.conteudo .row { 
+    display: flex;
+    align-items: center; 
+}

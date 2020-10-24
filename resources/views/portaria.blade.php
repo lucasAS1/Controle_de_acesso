@@ -42,8 +42,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-10 principal" >
-                <div class="container-fluid" >
+            <div class="col-10 principal my-5 py=5" >
+                <div class="container-fluid my-5 py=5" >
                     <div class="row d-flex align-content-center justify-content-center my-2">
                         <h1 class="display-3">Cadastros temporarios pendentes</h1>
                     </div>
@@ -63,24 +63,26 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($tabela as $linha)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Juan Gonzalez</td>
-                                    <td>111.111.111-11</td>
+                                    <th scope="row">{{$linha->Id_Cad}}</th>
+                                    <td>{{$linha->Nome}}</td>
+                                    <td>{{$linha->CPF}}</td>
                                     <td>ABC1234</td>
                                     <td>Vermelho</td>
                                     <td>R.Esmeralda 145</td>
                                     <td>João dos Santos</td>
-                                    <td>Prestação de serviço</td>
+                                    <td>{{$linha->Razao_visita}}</td>
                                     <td><i class="fas fa-exclamation-circle" style="color:yellow"></i> Pendente</td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="container d-flex justify-content-center mt-3">
+        <footer class="d-flex justify-content-center w-100 fixed-bottom">
             <p class="lead text-light">Centro Paula Souza - 2020</p>
         </footer>
         <script src="../JS/jQuery-3.3.1/jquery-3.3.1.min.js"></script>
