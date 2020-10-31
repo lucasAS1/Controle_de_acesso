@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Controle de Acesso - Portaria</title>
+        <link rel="stylesheet" href="../Css/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../Css/padrao.css">
+        <link rel="stylesheet" href="../JS/DataTables-1.10.22/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="../FA/css/all.css">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-expand navbar-dark nvg text-light sticky-top"> 
+            <a class="navbar-brand" href="#">Controle de Acesso</a>
+            <div class="ml-auto d-inline-flex align-items-center">
+                <label class="m-0">Bem vindo ...</label>
+                <a class="nav-link" href="#"><i class="fas fa-door-open"></i>Deslogar</a>
+            </div>
+        </div>
+        <div class="row conteudo">
+            <div class="col-2 menu-lateral">
+                <ul class="nav flex-column position-fixed">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <i class="fas fa-home"></i>
+                            Inicio</a>
+                        <hr class="my-0">
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link menu-link" href="/Cadastro">
+                            <i class="fas fa-user-plus"></i>
+                            Cadastrar
+                        </a>
+                        <hr class="my-0">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Relatorios">
+                            <i class="fas fa-chart-pie"></i>
+                            Relatórios
+                        </a>
+                        <hr class="my-0">
+                    </li>
+                </ul>
+            </div>
+            <div class="col-10 principal" >
+                <div class="container-fluid" >
+                    <div class="row d-flex align-content-center justify-content-center my-2">
+                        <h1 class="display-3">Cadastros visitantes</h1>
+                    </div>
+                    <!--onde comecei
+                    <div class="col-3">
+                    <div class="input-group mb-4" id="camponome">
+                        <div class="input-group-prepend"></div>
+                          <input type="text" placeholder="Nome" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                          <div></div>
+                    </div>
+                </div>
+                
+                    fim de onde comecei-->
+
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                          <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Nome</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" value="" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">Sobrenome</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" value="" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label>CPF</label>
+                            <div class="input-group">
+                              <input type="tel" class="form-control" placeholder="000.000.000-00" name="telefone" id="cpf" pattern="\[0-9]{3}\.[0-9]{3}.[0-9]{3}-[0-9]{2}" />
+                              <script type="text/javascript">$("#cpf").mask("000.000.000-09");</script>
+                              <div class="invalid-feedback">
+                                  Por favor insira um cpf válido
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row"><br></div>
+
+                        <div class="form-row">
+                            <div class="col-md-2 mb-3">
+                              <label for="validationCustom04">R.G</label>
+                              <input type="text" class="form-control" id="validationCustom01" placeholder="Número do RG" value="" required>
+                              <div class="valid-feedback">Looks good!</div>
+                              <div class="invalid-feedback">O RG não pode estar vazio</div>
+                            </div>
+
+                              <div class="col-md-3">
+                                <label class="my-1 mr-1" for="inlineFormCustomSelectPref">Estado</label>
+                                <select class="custom-select" required>
+                                  <option value="">Selecione o estado</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                                <div class="invalid-feedback">Seleção inválida</div>
+                              </div>
+
+                              <div class="col-md-3">
+                                <label class="my-1 mr-1" for="inlineFormCustomSelectPref">Emissor</label>
+                                <select class="custom-select" required>
+                                  <option value="">Selecione o emissor</option>
+                                    <option value="AC">SSP-AC - Secretaria de Segurança Pública do Acre</option>
+                                    <option value="AL">SSP/AL - Secretaria de Segurança Pública de Alagoas</option>
+                                    <option value="AP">SSP/AP - Secretaria de Segurança Pública do Amapá</option>
+                                    <option value="AM">SSP/AM - Secretaria de Segurança Pública do Amazonas </option>
+                                    <option value="BA">SSP/BA - Secretaria da Segurança Pública do Estado da Bahia</option>
+                                    <option value="CE">SSPDS/CE - Secretaria da Segurança Pública e Defesa Social do Estado do Ceará</option>
+                                    <option value="DF">SSP/DF - Secretaria de Segurança Pública do Distrito Federal</option>
+                                    <option value="ES">SESP/ES - Secretaria de Estado da Segurança Pública e Defesa Social do Espírito Santo</option>
+                                    <option value="GO">SSP/GO - Secretaria de Segurança Pública do Estado de Goiás</option>
+                                    <option value="MA">SSP/MA - Secretaria de Segurança Pública do Estado do Maranhão</option>
+                                    <option value="MT">SSP/MT - Secretaria de Segurança Pública de MT</option>
+                                    <option value="MS">SSP/MS - Secretaria de Segurança Pública do Estado de MS</option>
+                                    <option value="MG">SSP/MG - Secretaria de Estado de Segurança Pública de Minas Gerais</option>
+                                    <option value="PA">SSP/PA - Secretaria de Estado de Segurança Pública e Defesa Social do Pará</option>
+                                    <option value="PB">SSP/PB - Secretaria do Estado da Segurança e da Defesa Social da Paraíba</option>
+                                    <option value="PR">SSP/PR - Secretaria de Estado da Segurança Pública do Paraná</option>
+                                    <option value="PE">SSP/PE - Secretaria de Segurança Pública do estado de Pernambuco</option>
+                                    <option value="PI">SSP/PI - Secretaria de Segurança Pública do Estado do Piauí</option>
+                                    <option value="RJ">SSP/RJ - Secretaria de Estado da Segurança Pública do Rio de Janeiro</option>
+                                    <option value="RN">SESED/RN - Secretaria da Segurança Pública e da Defesa Social</option>
+                                    <option value="RS">SSP/RS - Secretaria da Segurança Pública do Rio Grande do Sul</option>
+                                    <option value="RO">SESDEC/RO - Secretaria de Estado de Segurança, Defesa e Cidadania</option>
+                                    <option value="RR">SESP/RR - Secretaria de Estado da Segurança Pública de Roraima</option>
+                                    <option value="SC">SSP/SC - Secretaria de Estado de Segurança Pública de Santa Catarina</option>
+                                    <option value="SP">SSP/SP - Secretaria de Segurança Pública do Estado de São Paulo</option>
+                                    <option value="SE">SSP/SE - Secretaria de Estado da Segurança Pública de Sergipe</option>
+                                    <option value="TO">SSP/TO - Secretaria da Segurança Púbica do Estado de Tocantins</option>
+                                </select>
+                                <div class="invalid-feedback">Seleção inválida</div>
+                              </div>
+
+                            <div class="col-md-4 mb-2">
+                              <label>Possui veículo?</label>
+                              <div class="input-group mt-2">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline1">Sim</label>
+                                  </div>
+                                  <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline2">Não</label>
+                                  </div>
+                                  <div class="invalid-feedback">Seleção Invalida</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        <div class="row"><br></div>
+
+                        <div class="row">
+                        <div class="col-md-2 mb-2 ml-2">
+                            <fieldset disabled>
+                              <div class="form-group">
+                                <label for="disabledTextInput">Veículo</label>
+                                <input type="text" id="disabledTextInput" class="form-control" placeholder="Placa do veículo">
+                                
+                              </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">Morador</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="Nome do morador ou proprietário" value="" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+
+                        <div class="col-md-4 mb-2">
+                            <label class="my-1 mr-1" for="inlineFormCustomSelectPref">Tipo</label>
+                            <select class="custom-select" required>
+                            <option value="">Selecione o tipo</option>
+                            <option value="">Tipo 1</option>
+                            <option value="">Tipo 2</option>
+                            </select>
+                            <div class="invalid-feedback">Seleção Invalida</div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-3 mb-3 ml-2">
+                          <input class="btn btn-primary" type="submit" value="Enviar" align="right">
+                        </div>
+                        </div>
+
+                      </form>
+                      
+                      <script>
+                      // Example starter JavaScript for disabling form submissions if there are invalid fields
+                      (function() {
+                        'use strict';
+                        window.addEventListener('load', function() {
+                          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                          var forms = document.getElementsByClassName('needs-validation');
+                          // Loop over them and prevent submission
+                          var validation = Array.prototype.filter.call(forms, function(form) {
+                            form.addEventListener('submit', function(event) {
+                              if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                              }
+                              form.classList.add('was-validated');
+                            }, false);
+                          });
+                        }, false);
+                      })();
+                      </script>
+
+
+                </div>
+            </div>
+        </div>
+        <footer class="container d-flex justify-content-center mt-3">
+            <p class="lead text-light">Centro Paula Souza - 2020</p>
+        </footer>
+        <script src="../JS/jQuery-3.3.1/jquery-3.3.1.min.js"></script>
+        <script src="../JS/DataTables-1.10.22/js/jquery.dataTables.min.js"></script>
+        <script src="../JS/DataTables-1.10.22/js/dataTables.bootstrap4.min.js"></script>
+        <script src="../JS/datatable.js"></script>
+        <script src="../FA/js/all.min.js" crossorigin="anonymous"></script>
+    </body>
+</html>
