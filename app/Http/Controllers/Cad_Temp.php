@@ -21,6 +21,6 @@ class Cad_Temp extends Controller
 
         $cadastro->save();
 
-        return view('portaria');
+        return view('portaria',['tabela'=>$cadastro->all()]);
     }
 }
