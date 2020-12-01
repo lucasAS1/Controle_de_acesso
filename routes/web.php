@@ -22,6 +22,10 @@ Route::get('/', function () {
 
 Route::get('/Cadastro', function () {
     return view('temp_cad');
-});
+})->middleware('auth');
 
 Route::post('/cad_temp',[Cad_Temp::class,'insereCadastro']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
