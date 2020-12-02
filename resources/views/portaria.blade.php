@@ -15,7 +15,7 @@
                 <a class="navbar-brand" href="#">Controle de Acesso</a>
                 <div class="ml-auto d-inline-flex align-items-center">
                     <label class="m-0">Bem vindo ...</label>
-                    <a class="nav-link" href="#"><i class="fas fa-door-open"></i>Deslogar</a>
+                    <a class="nav-link" href="/logout"><i class="fas fa-door-open"></i>Deslogar</a>
                 </div>
             </div>
             <div class="row conteudo h-100">
