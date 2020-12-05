@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-
+use Illuminate\Support\Facades\Log;
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -58,4 +58,15 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function CadastraUsuario(){
+        try{
+        $this->$password=bcrypt($this->$password);
+        $this->save();
+        return true;
+        }
+        catch(Exception $e){
+            return false;
+        }
+    }
 }

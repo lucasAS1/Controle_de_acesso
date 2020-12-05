@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Cad_Temp;
 use App\Models\cadastro_temp;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,10 +27,20 @@ Route::get('/Cadastro', function () {
 })->middleware('auth');
 
 Route::get('/Cadastro_usuario', function () {
-    return view('auth/register');
+    return view('cad_usuario');
 })->middleware('auth');
 
-Route::post('/cad_temp',[Cad_Temp::class,'insereCadastro']);
+Route::post('/Cadastro_usuario', function (Request $req) {
+    $novoUsuario=new User();
+    $novoUsuario->name=$req->name;
+    $novoUsuario->password=$req->password;
+    $success=$novoUsuario->CadastraUsuario();
+    if($success!=true){echo $success;return view('cad_usuario'); }
+    $Cad=new cadastro_temp();
+    return view('portaria',['tabela'=>$Cad->all()]);
+})->middleware('auth');
+
+Route::post('/cad_temp',[Cad_Temp::class,'insereCadastro'])->middleware('auth');
 
 Route::get('/logout',function(){Auth::logout();return view('auth/login');});
 

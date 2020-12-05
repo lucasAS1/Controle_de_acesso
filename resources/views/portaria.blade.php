@@ -6,6 +6,7 @@
         <title>Controle de Acesso - Portaria</title>
         <link rel="stylesheet" href="../Css/css/bootstrap.min.css">
         <link rel="stylesheet" href="../Css/padrao.css">
+        <link rel="stylesheet" href="../Css/app.css">
         <link rel="stylesheet" href="../JS/DataTables-1.10.22/css/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="../FA/css/all.css">
     </head>
@@ -30,7 +31,14 @@
                         <li class="nav-item" >
                             <a class="nav-link menu-link" href="/Cadastro">
                                 <i class="fas fa-user-plus"></i>
-                                Cadastrar
+                                Cadastrar visita
+                            </a>
+                            <hr class="my-0">
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link menu-link" href="/Cadastro_usuario">
+                                <i class="fas fa-user-plus"></i>
+                                Cadastrar usuário
                             </a>
                             <hr class="my-0">
                         </li>

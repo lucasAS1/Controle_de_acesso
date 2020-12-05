@@ -9,7 +9,7 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <div>
+            <div class="cartao">
                 <x-jet-label for="name" value="{{ __('Nome de Usuario') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
